@@ -10,5 +10,4 @@ class EffectiveJavaApplication
 
 fun main(args: Array<String>) {
     runApplication<EffectiveJavaApplication>(*args)
-    Elvis()
 }
