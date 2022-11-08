@@ -6,11 +6,11 @@ class Favorites {
 
     private val favorites: MutableMap<Class<*>, Any> = mutableMapOf()
 
-    fun <T : Any> putFavorite(type: Class<T>, instant: T) {
+    private fun <T : Any> putFavorite(type: Class<T>, instant: T) {
         favorites[type] = instant
     }
 
-    fun <T : Any> getFavorite(type: KClass<T>): T = type.javaObjectType.cast(favorites[type.java])
+    private fun <T : Any> getFavorite(type: KClass<T>): T = type.javaObjectType.cast(favorites[type.java])
 
     fun main() {
         val f = Favorites()

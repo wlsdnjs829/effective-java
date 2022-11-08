@@ -1,7 +1,7 @@
 package com.example.effectivejava.five
 
 enum class Planet(
-    private val mass: Double, private val radius: Double,
+    mass: Double, radius: Double,
 ) {
 
     MERCURY(3.302e+23, 2.439e6),

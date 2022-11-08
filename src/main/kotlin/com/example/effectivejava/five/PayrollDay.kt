@@ -8,7 +8,7 @@ enum class PayrollDay(private val payType: PayType) {
     THURSDAY(PayType.WEEKDAY),
     FRIDAY(PayType.WEEKDAY),
     SATURDAY(PayType.WEEKDAY),
-    SUNDAY(PayType.WEEKDAY),
+    SUNDAY(PayType.WEEKEND),
     ;
 
     fun pay(minutesWorked: Int, payRate: Int) = payType.pay(minutesWorked, payRate)
