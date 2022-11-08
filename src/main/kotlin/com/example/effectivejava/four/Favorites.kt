@@ -12,18 +12,18 @@ class Favorites {
 
     fun <T : Any> getFavorite(type: KClass<T>): T = type.javaObjectType.cast(favorites[type.java])
 
-}
+    fun main() {
+        val f = Favorites()
 
-fun main() {
-    val f = Favorites()
+        f.putFavorite(String::class.java, "Java")
+        f.putFavorite(Int::class.java, 0xcafebabe.toInt())
+        f.putFavorite(Class::class.java, Favorites::class.java)
 
-    f.putFavorite(String::class.java, "Java")
-    f.putFavorite(Int::class.java, 0xcafebabe.toInt())
-    f.putFavorite(Class::class.java, Favorites::class.java)
+        val favoriteString = f.getFavorite(String::class)
+        val favoriteInt = f.getFavorite(Int::class)
+        val favoriteClass = f.getFavorite(Class::class)
 
-    val favoriteString = f.getFavorite(String::class)
-    val favoriteInt = f.getFavorite(Int::class)
-    val favoriteClass = f.getFavorite(Class::class)
+        println("$favoriteString $favoriteInt ${favoriteClass.name}")
+    }
 
-    println("$favoriteString $favoriteInt ${favoriteClass.name}")
 }
