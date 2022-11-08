@@ -23,4 +23,3 @@ enum class Planet(
     fun surfaceWeight(mass: Double) = mass * surfaceGravity
 
 }
-
