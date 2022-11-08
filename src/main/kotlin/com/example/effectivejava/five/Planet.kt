@@ -1,6 +1,8 @@
 package com.example.effectivejava.five
 
-enum class Planet(mass: Double, radius: Double) {
+enum class Planet(
+    private val mass: Double, private val radius: Double,
+) {
 
     MERCURY(3.302e+23, 2.439e6),
     VENUS(4.869e+24, 6.052e6),
@@ -8,8 +10,6 @@ enum class Planet(mass: Double, radius: Double) {
     MARS(6.419e+23, 3.393e6),
     ;
 
-    val mass: Double = mass
-    val radius: Double = radius
     private val surfaceGravity: Double
 
     private object Const {
