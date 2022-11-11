@@ -1,21 +1,18 @@
 package com.example.effectivejava.five
 
+import java.util.function.DoubleBinaryOperator
+
 enum class BasicOperation(
     private val symbol: String,
-) : Operation {
+    private val op: DoubleBinaryOperator,
+) {
 
-    PLUS("+") {
-        override fun apply(x: Double, y: Double) = x + y
-    },
-    MINUS("-") {
-        override fun apply(x: Double, y: Double) = x - y
-    },
-    TIMES("*") {
-        override fun apply(x: Double, y: Double) = x * y
-    },
-    DIVIDE("/") {
-        override fun apply(x: Double, y: Double) = x / y
-    },
+    PLUS("+", { x, y -> x + y }),
+    MINUS("-", { x, y -> x - y }),
+    TIMES("*", { x, y -> x * y }),
+    DIVIDE("/", { x, y -> x / y }),
     ;
+
+    fun apply(x: Double, y: Double): Double = op.applyAsDouble(x, y)
 
 }
