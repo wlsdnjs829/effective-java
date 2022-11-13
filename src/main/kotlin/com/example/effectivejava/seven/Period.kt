@@ -14,7 +14,7 @@ class Period(start: Date, end: Date) {
         this.start = Date(start.time)
         this.end = Date(end.time)
 
-        assert(this.start > this.end) { println("${this.start}가 ${this.end}보다 늦다") }
+        require(this.start <= this.end) { "${this.start}가 ${this.end}보다 늦다" }
     }
 
 }
