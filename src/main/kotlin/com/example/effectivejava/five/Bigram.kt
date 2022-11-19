@@ -8,11 +8,16 @@ data class Bigram(
     fun main() {
         val s = HashSet<Bigram>()
 
-        repeat(10) {
-            ('a'..'z').forEach {
-                s.add(Bigram(it, it))
+        try {
+            repeat(10) {
+                ('a'..'z').forEach {
+                    s.add(Bigram(it, it))
+                }
             }
+        } catch (ignored: Exception) {
+            // 예외 무시 케이스 테스트
         }
+
 
         println(s.size)
     }
